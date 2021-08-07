@@ -4,6 +4,17 @@ $pdo = new PDO('mysql:host=localhost;dbname=product_crud', 'root', 'root');
 // throw an error
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+
+$statements = $pdo->prepare('SELECT * FROM products order by date desc');
+$statements->execute();
+$products = $statements->fetchAll(PDO::FETCH_ASSOC);
+
+echo '<pre>';
+var_dump($products);
+echo '</pre>';
+
+
+
 ?>
 
 <!doctype html>
