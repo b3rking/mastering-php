@@ -33,6 +33,7 @@ $products = $statements->fetchAll(PDO::FETCH_ASSOC);
                 <th scope="col">name</th>
                 <th scope="col">price</th>
                 <th scope="col">date</th>
+                <th scope="col">action</th>
             </tr>
         </thead>
         <tbody>
@@ -42,6 +43,10 @@ $products = $statements->fetchAll(PDO::FETCH_ASSOC);
                 <td><?= $pt["title"] ?></td>
                 <td><?= $pt["price"] ?></td>
                 <td><?= $pt["date"] ?></td>
+                <td>
+                    <button type="button" class="btn btn-sm btn-outline-primary">Edit</button>
+                    <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
+                </td>
             </tr>
             <?php endforeach ?>
         </tbody>
