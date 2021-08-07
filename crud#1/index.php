@@ -4,16 +4,9 @@ $pdo = new PDO('mysql:host=localhost;dbname=product_crud', 'root', 'root');
 // throw an error
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-
 $statements = $pdo->prepare('SELECT * FROM products order by date desc');
 $statements->execute();
 $products = $statements->fetchAll(PDO::FETCH_ASSOC);
-
-echo '<pre>';
-var_dump($products);
-echo '</pre>';
-
-
 
 ?>
 
@@ -36,19 +29,21 @@ echo '</pre>';
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">id</th>
+                <th scope="col">name</th>
+                <th scope="col">price</th>
+                <th scope="col">date</th>
             </tr>
         </thead>
         <tbody>
+            <?php foreach($products as $pt): ?>
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row"><?= $pt["id"] ?></th>
+                <td><?= $pt["title"] ?></td>
+                <td><?= $pt["price"] ?></td>
+                <td><?= $pt["date"] ?></td>
             </tr>
+            <?php endforeach ?>
         </tbody>
     </table>
   </body>
