@@ -10,10 +10,11 @@ class Pont
 {
     public float $longueur = 0;
     public float $largeur = 0;
+    public string $unite = 'm²';
 
-    public function getSurface(): float
+    public function getSurface(): string
     {
-        return $this->longueur * $this->largeur;
+        return ($this->longueur * $this->largeur) .$this->unite;
     }
 }
 
@@ -21,6 +22,4 @@ $pont = new Pont;
 $pont->longueur = 235.6;
 $pont->largeur = 254;
 
-$surface = $pont->largeur * $pont->longueur;
-
-var_dump($surface);
+var_dump($pont->getSurface());
