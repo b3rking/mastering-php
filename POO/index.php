@@ -6,6 +6,10 @@
 
 declare (strict_types=1);
 
+
+/**
+ * [classe pour gerer les Pont]
+ */
 class Pont
 {
     private float $longueur = 0;
@@ -19,6 +23,7 @@ class Pont
         $this->largeur = $la;
     }
 
+    
     public static function valideTaille(float $l): bool
     {
         if ($l <= 50.0) {
