@@ -13,6 +13,12 @@ class Pont
     private const UNITE = 'm²';
 
 
+    public function __construct(float $l, float $la)
+    {
+        $this->longueur = $l;
+        $this->largeur = $la;
+    }
+
     public static function valideTaille(float $l): bool
     {
         if ($l <= 50.0) {
@@ -47,8 +53,6 @@ class Pont
     }
 }
 
-$pont = new Pont;
-$pont->setLongueur(235.6);
-$pont->setLargeur(254);
+$pont = new Pont(235.6, 254);
 
 var_dump($pont->getSurface());
