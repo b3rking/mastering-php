@@ -6,7 +6,7 @@
 
 declare (strict_types=1);
 
-
+namespace Learning;
 /**
  * [classe pour gerer les Pont]
  */
@@ -52,6 +52,7 @@ class Pont
         return ($this->longueur * $this->largeur) . self::UNITE;
     }
 
+    
     public function getLongueur():float
     {
         return $this->longueur;
