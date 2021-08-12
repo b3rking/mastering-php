@@ -62,3 +62,19 @@ class Pont
 $pont = new Pont(235.6, 254);
 
 var_dump($pont->getSurface());
+
+
+// trait Fr {}
+
+interface UserNumber
+{
+    public function getNumber(): string;
+}
+
+class Tests implements UserNumber
+{
+    public function getNumber(): string
+    {
+        return json_encode(['number'=> 6489494]);
+    }
+}
