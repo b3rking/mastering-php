@@ -4,5 +4,5 @@ require_once('./model.php');
 
 getBillets();
 
-require('./showAccueil.php');
+require('./indexView.php');
 ?>
