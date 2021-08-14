@@ -2,7 +2,6 @@
 // Récupération des données
 require_once('./model.php');
 
-getPosts();
-
+$req = getPosts();
 require('./indexView.php');
 ?>
