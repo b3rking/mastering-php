@@ -1,5 +1,5 @@
 <?php
-function getBillets()
+function getPosts()
 {
 	try
 	{

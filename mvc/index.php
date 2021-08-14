@@ -2,7 +2,7 @@
 // Récupération des données
 require_once('./model.php');
 
-getBillets();
+getPosts();
 
 require('./indexView.php');
 ?>
